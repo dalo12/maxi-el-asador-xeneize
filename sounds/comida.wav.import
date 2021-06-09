@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/comida.wav-b921e14a119093a5fd4e7cf0bb6a3199.sample"
+
+[deps]
+
+source_file="res://sounds/comida.wav"
+dest_files=[ "res://.import/comida.wav-b921e14a119093a5fd4e7cf0bb6a3199.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
