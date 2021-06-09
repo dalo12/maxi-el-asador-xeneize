@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/cumbia menú.WAV-19e9b8e0a1a942ef29c4af830f9b2ed5.sample"
+
+[deps]
+
+source_file="res://sounds/cumbia menú.WAV"
+dest_files=[ "res://.import/cumbia menú.WAV-19e9b8e0a1a942ef29c4af830f9b2ed5.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
