@@ -1,0 +1,191 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://assets/black_backgroud.png" type="Texture" id=1]
+[ext_resource path="res://src/UserInterface/PlayButton.gd" type="Script" id=2]
+[ext_resource path="res://src/UserInterface/QuitButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/UserInterface/PlayButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/KIdDOS-Regular.otf" type="DynamicFontData" id=5]
+[ext_resource path="res://src/UserInterface/CreditsButton.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/UserInterface/CreditsButton.gd" type="Script" id=7]
+[ext_resource path="res://src/UserInterface/QuitButton.gd" type="Script" id=8]
+[ext_resource path="res://assets/license.png" type="Texture" id=9]
+[ext_resource path="res://src/UserInterface/VolverButton.gd" type="Script" id=10]
+[ext_resource path="res://src/UserInterface/VolverButton.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/ui_theme.tres" type="Theme" id=12]
+
+[sub_resource type="DynamicFont" id=1]
+size = 48
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 48
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 48
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 40
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 25
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 72
+font_data = ExtResource( 5 )
+
+[node name="EndScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -143.0
+margin_top = -100.5
+margin_right = 143.0
+margin_bottom = 100.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayButton" type="Button" parent="Menu" instance=ExtResource( 4 )]
+margin_right = 286.0
+margin_bottom = 64.0
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 1 )
+text = "Jugar de nuevo"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+next_scene_path = "res://src/Screens/MainScreen.tscn"
+
+[node name="CreditsButton" type="Button" parent="Menu" instance=ExtResource( 6 )]
+margin_top = 68.0
+margin_right = 286.0
+margin_bottom = 132.0
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+text = "Creditos"
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuitButton" type="Button" parent="Menu" instance=ExtResource( 3 )]
+margin_top = 136.0
+margin_right = 286.0
+margin_bottom = 201.0
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 3 )
+text = "Salir"
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BlackBackground" type="TextureRect" parent="Panel"]
+margin_right = 1024.0
+margin_bottom = 600.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Credits" type="Label" parent="Panel"]
+margin_left = 120.0
+margin_top = 136.0
+margin_right = 632.0
+margin_bottom = 337.0
+text = "Programacion: dalo
+Musica: mariod85
+Arte: dalo
+Efectos de sonido: mariod85"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Zapdos" type="Label" parent="Panel"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -20.0
+margin_top = 386.0
+margin_right = 1004.0
+margin_bottom = 434.0
+custom_fonts/font = SubResource( 4 )
+text = "Desarrollado por Zapdos Team para la
+DVBahia GameWorkJam 2021"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="License" type="Label" parent="Panel"]
+margin_left = 336.0
+margin_top = 519.0
+margin_right = 884.0
+margin_bottom = 574.0
+custom_fonts/font = SubResource( 5 )
+text = "Esta obra esta bajo una Licencia Creative Commons
+Atribucion-NoComercial-CompartirIgual 4.0 Internacional."
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LicenseImage" type="TextureRect" parent="Panel"]
+margin_left = 899.0
+margin_top = 529.0
+margin_right = 987.0
+margin_bottom = 569.0
+texture = ExtResource( 9 )
+
+[node name="Creditos" type="Label" parent="Panel"]
+margin_left = 40.0
+margin_top = 40.0
+margin_right = 289.0
+margin_bottom = 112.0
+custom_fonts/font = SubResource( 6 )
+text = "Creditos:"
+
+[node name="VolverButton" type="Button" parent="Panel" instance=ExtResource( 11 )]
+margin_left = 40.0
+margin_top = 519.0
+margin_right = 171.0
+margin_bottom = 573.0
+text = "Volver"
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="button_up" from="Menu/PlayButton" to="Menu/PlayButton" method="_on_button_up"]
+[connection signal="button_up" from="Menu/CreditsButton" to="Menu/CreditsButton" method="_on_button_up"]
+[connection signal="button_up" from="Menu/QuitButton" to="Menu/QuitButton" method="_on_button_up"]
+[connection signal="button_up" from="Panel/VolverButton" to="Panel/VolverButton" method="_on_button_up"]

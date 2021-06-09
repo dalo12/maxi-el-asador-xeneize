@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/UserInterface/VolverButton.gd" type="Script" id=1]
+
+[node name="VolverButton" type="Button"]
+margin_left = 40.0
+margin_top = 519.0
+margin_right = 171.0
+margin_bottom = 573.0
+text = "Volver"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="button_up" from="." to="." method="_on_button_up"]
