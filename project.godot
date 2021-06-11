@@ -27,6 +27,9 @@ _global_script_class_icons={
 [application]
 
 config/name="Plataformero"
+config/description="​Maxi estaba organizando un asado con sus amigos, pero un grupo de ensaladas mutantes futboleras robaron la materia prima de tan preciado manjar de dioses.
+
+¡Ayudá a Maxi a recolectar las piezas robadas dispersas por el mapa mientras te enfrentás a tan aguerridos enemigos! "
 run/main_scene="res://src/Screens/MainScreen.tscn"
 config/icon="res://icon.png"
 
