@@ -2,10 +2,13 @@ extends Node2D
 
 var coins_total = {}
 var coins_win = {}
+var victory:bool = false
 
 func _process(delta):
 	actualizar_panel()
 	verificar_victoria()
+	if victory:
+		transicion_escena(delta)
 
 	
 func incrementar_total(key: String) -> void:
@@ -25,11 +28,16 @@ func actualizar_panel():
 	for k in coins_total.keys():
 		texto += str(k, ": ", coins_win[k], "/", coins_total[k], "\n")
 
-	get_node("CapaRecursos/Recursos").set_text(texto)
+	get_node("OverLayer/Recursos").set_text(texto)
 
 func verificar_victoria():
 	var razon = 1
 	for i in coins_total.keys():
 		razon *= coins_win[i] / coins_total[i]
 	if(razon == 1):
-		get_node("CapaRecursos/Win").visible = true
+		victory = true
+		get_node("VictorySound").play()
+		get_node("OverLayer/Win").set_visible(true)
+		
+func transicion_escena(delta:float):
+	get_node("OverLayer/BlackRect").modulate.a += 0.4 * delta

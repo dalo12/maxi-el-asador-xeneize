@@ -8,6 +8,8 @@ func _on_EnemyDetector_area_entered(area):
 	_velocity = calculate_stomp_velocity(_velocity, stomp_impulse)
 
 func _on_EnemyDetector_body_entered(body):
+	get_parent().get_node("DeadSound").play()
+	get_parent().get_node("BackgroundMusic").stop()
 	queue_free()
 	
 

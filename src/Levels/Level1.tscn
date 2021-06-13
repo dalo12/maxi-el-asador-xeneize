@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://assets/background.png" type="Texture" id=1]
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=2]
@@ -13,6 +13,9 @@
 [ext_resource path="res://src/Objects/Coin-chori.tscn" type="PackedScene" id=11]
 [ext_resource path="res://src/Levels/Level1.gd" type="Script" id=12]
 [ext_resource path="res://assets/KIdDOS-Regular.otf" type="DynamicFontData" id=13]
+[ext_resource path="res://sounds/winlevel.WAV" type="AudioStream" id=14]
+[ext_resource path="res://assets/black_backgroud.png" type="Texture" id=15]
+[ext_resource path="res://sounds/game_over.WAV" type="AudioStream" id=16]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 27, 0.381836, 27, 19.471, 0, 20 )
@@ -228,9 +231,9 @@ position = Vector2( 1314, 20.9841 )
 [node name="Coin20" parent="." instance=ExtResource( 11 )]
 position = Vector2( 1478, 23.9841 )
 
-[node name="CapaRecursos" type="CanvasLayer" parent="."]
+[node name="OverLayer" type="CanvasLayer" parent="."]
 
-[node name="Recursos" type="Label" parent="CapaRecursos"]
+[node name="Recursos" type="Label" parent="OverLayer"]
 margin_left = 47.0
 margin_top = 24.0
 margin_right = 991.0
@@ -241,7 +244,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Win" type="Label" parent="CapaRecursos"]
+[node name="Win" type="Label" parent="OverLayer"]
 visible = false
 anchor_left = 0.5
 anchor_top = 0.5
@@ -258,5 +261,21 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="BlackRect" type="TextureRect" parent="OverLayer"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 15 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VictorySound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+
+[node name="DeadSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 16 )
 
 [editable path="Player"]
