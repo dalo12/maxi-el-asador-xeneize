@@ -278,4 +278,14 @@ stream = ExtResource( 14 )
 [node name="DeadSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 16 )
 
+[connection signal="player_died" from="Player" to="." method="_on_Player_player_died"]
+[connection signal="created" from="Coin" to="." method="_on_Coin_created"]
+[connection signal="eatten" from="Coin" to="." method="_on_Coin_eatten"]
+[connection signal="created" from="Coin2" to="." method="_on_Coin_created"]
+[connection signal="eatten" from="Coin2" to="." method="_on_Coin_eatten"]
+[connection signal="created" from="Coin3" to="." method="_on_Coin_created"]
+[connection signal="eatten" from="Coin3" to="." method="_on_Coin_eatten"]
+[connection signal="created" from="Coin10" to="." method="_on_Coin_created"]
+[connection signal="eatten" from="Coin10" to="." method="_on_Coin_eatten"]
+
 [editable path="Player"]

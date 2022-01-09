@@ -9,7 +9,6 @@ func _process(delta):
 	verificar_victoria()
 	if victory:
 		transicion_escena(delta)
-
 	
 func incrementar_total(key: String) -> void:
 	if(coins_total.has(key)):
@@ -36,8 +35,20 @@ func verificar_victoria():
 		razon *= coins_win[i] / coins_total[i]
 	if(razon == 1):
 		victory = true
-		get_node("VictorySound").play()
+		$BackgroundMusic.stop()
+		$VictorySound.play()
 		get_node("OverLayer/Win").set_visible(true)
 		
 func transicion_escena(delta:float):
 	get_node("OverLayer/BlackRect").modulate.a += 0.4 * delta
+
+
+func _on_Player_player_died():
+	$DeadSound.play()
+	$BackgroundMusic.stop()
+
+func _on_Coin_created(coin_name):
+	incrementar_total(coin_name)
+	
+func _on_Coin_eatten(coin_name):
+	incrementar_win(coin_name)

@@ -60,10 +60,14 @@ __meta__ = {
 }
 
 [node name="PlayButton" parent="Menu" instance=ExtResource( 5 )]
+margin_bottom = 98.0
 
 [node name="CreditsButton" parent="Menu" instance=ExtResource( 6 )]
+margin_top = 102.0
+margin_bottom = 201.0
 
 [node name="QuitButton" parent="Menu" instance=ExtResource( 3 )]
+visible = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 pause_mode = 2

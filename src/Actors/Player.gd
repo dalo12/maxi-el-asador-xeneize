@@ -4,12 +4,13 @@ export var stomp_impulse:float = 1000.0
 
 const VELOCIDAD_SALTO = 1.3
 
+signal player_died
+
 func _on_EnemyDetector_area_entered(area):
 	_velocity = calculate_stomp_velocity(_velocity, stomp_impulse)
 
 func _on_EnemyDetector_body_entered(body):
-	get_parent().get_node("DeadSound").play()
-	get_parent().get_node("BackgroundMusic").stop()
+	emit_signal("player_died")
 	queue_free()
 	
 

@@ -3,8 +3,8 @@ extends Moneda
 var nombre = "chori"
 
 func _ready():
-	get_parent().incrementar_total(nombre)
+	emit_signal("created", nombre)
 
 func _on_body_entered(body):
 	._on_body_entered(body)
-	get_parent().incrementar_win(nombre)
+	emit_signal("eatten", nombre)
