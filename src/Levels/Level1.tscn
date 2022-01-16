@@ -244,6 +244,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="BlackRect" type="TextureRect" parent="OverLayer"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 15 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Win" type="Label" parent="OverLayer"]
 visible = false
 anchor_left = 0.5
@@ -258,16 +268,6 @@ custom_fonts/font = SubResource( 8 )
 text = "¡GANASTE!"
 align = 1
 valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="BlackRect" type="TextureRect" parent="OverLayer"]
-modulate = Color( 1, 1, 1, 0 )
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = ExtResource( 15 )
-expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }

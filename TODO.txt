@@ -1,0 +1,7 @@
+TODO list
+
+-[ ] Pause button
+-[ ] Victory
+-[ ] Defeat
+-[ ] Arreglar bug del salto
+-[ ] Arreglar bug de que las monedas se comen dos veces

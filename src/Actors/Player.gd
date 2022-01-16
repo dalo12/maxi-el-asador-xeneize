@@ -11,6 +11,7 @@ func _on_EnemyDetector_area_entered(area):
 
 func _on_EnemyDetector_body_entered(body):
 	emit_signal("player_died")
+	$Camera2D.current = false
 	queue_free()
 	
 
